@@ -44,6 +44,7 @@
 
 .about-section {
     background-color: #ffffff;
+    
 }
 .about-section {
     font-size: 30px;
@@ -68,15 +69,61 @@
     background-color: #f8f9fa;
 }
 .section-description {
-    font-size: 1.5rem; 
+    font-size: 2rem; 
     color: #333;
     max-width: 1000px;
     margin: 0 auto;
+    color: rgb(233, 33, 33);
+    animation: glow-animation 1s infinite alternate;
+}
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.7; 
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 15px;
+}
+
+.huu{
+    color: black;
+    font-size: 24px;
 }
 
 .contact-section {
     background: linear-gradient(to right, #2575fc, #6a11cb);
     padding: 60px 0;
+}
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 5px #000000, 0 0 5px #ffffff, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #000000, 0 0 10px #ffffff, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #000000, 0 0 5px #ffffff, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
 }
 
 @keyframes fadeInDown {
@@ -107,7 +154,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><b>Everyone I'm Rajarshi Das</b> </a>
+            <a class="navbar-brand" href="#"><b>Hello Everyone I'm Rajarshi Das</b> </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -134,16 +181,29 @@
         <div class="container">
             <h1 class="display-4">Welcome to My Portfolio</h1>
             <p class="lead">Showcasing My Work & Achievements</p>
-            <img src="profile.png" alt="Profile Image" class="rounded-circle img-thumbnail">
+            <img src="/images/profile.png" alt="Profile Image" class="rounded-circle img-thumbnail">
         </div>
     </header>
 
-    
     <section id="about" class="about-section py-5 text-center">
         <div class="container">
-            <h2 class="section-title"><b>About Me</b> </h2>
-            <p>Helo</p>
-            <p class="section-description dynamic-text">I am a passionate developer with expertise in web development...</p>
+            <div class="video-container">
+                <video autoplay muted loop class="background-video">
+                    <source src="/images/1234.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="content-overlay">
+                    <h2 class="section-title"><b>About Me</b></h2>
+                <p>Bonjour everyone ,I am Rajarshi Das. Currently pursuing a btech degree in CSE under Makaut university.
+                I am a passionate and dedicated beginner web developer . 
+                With a strong foundation in HTML, CSS, and JavaScript, I am enthusiastic about creating intuitive and visually appealing websites.
+                I am particularly interested in front-end development and am committed to continuous learning to stay updated with industry trends.
+                 I am eager to apply my knowledge and creativity to real-world projects and contribute to innovative web solutions.
+                </p>
+                
+                 <p class="section-description dynamic-text">I am a passionate developer with expertise in web development...</p>
+                </div>
+            </div>     
         </div>
     </section>
 
@@ -155,7 +215,7 @@
                 
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="responsive.png" class="card-img-top" alt="Project 1">
+                        <img src="/images/responsive.png" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Project One</h5>
                             <p class="card-text">Description of Project One.</p>
@@ -166,7 +226,7 @@
                 
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="stopwatch.png" class="card-img-top" alt="Project 2">
+                        <img src="/images/stopwatch.png" class="card-img-top" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title">Project Two</h5>
                             <p class="card-text">Description of Project Two.</p>
@@ -177,7 +237,7 @@
                
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="tictactoe.png" class="card-img-top" alt="Project 3">
+                        <img src="/images/tictactoe.png" class="card-img-top" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title">Project Three</h5>
                             <p class="card-text">Description of Project Three.</p>
@@ -193,8 +253,9 @@
     <section id="contact" class="contact-section py-5 text-center text-white">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
-            <p class="section-description">Feel free to reach out for collaborations or just a friendly chat!</p>
-            <br>
+            <div class="huu">
+                <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+            </div>
             <br>
             <a href="mailto:rajarshidas729@gmail.com" class="btn btn-light">Get in Touch</a>
         </div>
